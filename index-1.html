@@ -1,0 +1,106 @@
+<!doctype html>
+<html lang="hi">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="DM Sideffect — AI video creator. Turn your ideas into cinematic video concepts.">
+  <meta name="theme-color" content="#101322">
+  <title>DM Sideffect | AI Video Creator</title>
+  <style>
+    :root{--bg:#101322;--panel:#191d31;--line:#303650;--text:#f7f7ff;--muted:#b9bfd6;--purple:#8b5cf6;--cyan:#67e8f9}
+    *{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:radial-gradient(ellipse at 80% 0%,#29204d 0,transparent 35%),var(--bg);color:var(--text);font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;line-height:1.55}
+    a{color:inherit;text-decoration:none}.wrap{width:min(1100px,92%);margin:auto}
+    header{display:flex;align-items:center;justify-content:space-between;padding:20px 0;border-bottom:1px solid #ffffff12}
+    .brand{display:flex;align-items:center;gap:11px;font-weight:800;font-size:1.1rem}.logo{display:grid;place-items:center;width:43px;height:43px;border-radius:13px;background:linear-gradient(135deg,var(--purple),#4f46e5);font-size:1.25rem}
+    nav{display:flex;gap:22px;color:var(--muted);font-size:.95rem}nav a:hover{color:white}
+    .hero{display:grid;grid-template-columns:1.05fr .95fr;gap:38px;align-items:center;padding:64px 0 52px}
+    .pill{display:inline-flex;align-items:center;gap:8px;border:1px solid #a78bfa55;background:#8b5cf61a;color:#ddd6fe;border-radius:999px;padding:7px 12px;font-size:.83rem}
+    h1{font-size:clamp(2.5rem,6vw,4.6rem);line-height:1.04;letter-spacing:-.04em;margin:18px 0}.gradient{background:linear-gradient(90deg,#c4b5fd,#67e8f9);-webkit-background-clip:text;background-clip:text;color:transparent}
+    .lead{color:var(--muted);font-size:1.08rem;max-width:560px}.actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:25px}
+    .btn{display:inline-flex;justify-content:center;align-items:center;border:0;border-radius:12px;padding:12px 18px;font-weight:750;cursor:pointer;font-size:.95rem}
+    .primary{background:linear-gradient(135deg,var(--purple),#6366f1);color:white;box-shadow:0 8px 28px #6d28d944}.secondary{background:#ffffff0b;border:1px solid var(--line);color:var(--text)}
+    .art{min-height:330px;border:1px solid #ffffff1c;border-radius:26px;overflow:hidden;position:relative;background:radial-gradient(circle at 50% 45%,#6544c9 0,#29235b 27%,#141a36 58%,#101322 100%);display:grid;place-items:center}
+    .orb{width:190px;height:190px;border-radius:50%;background:radial-gradient(circle at 30% 25%,#f0abfc,#8b5cf6 30%,#312e81 68%,#101322);box-shadow:0 0 55px #8b5cf688, inset -15px -20px 35px #080a20;position:relative}
+    .orb:before,.orb:after{content:"";position:absolute;border:1px solid #c4b5fd88;border-radius:50%;inset:-25px;transform:rotate(-25deg) scaleY(.45)}.orb:after{transform:rotate(35deg) scaleY(.65);inset:-42px}
+    .art-label{position:absolute;bottom:18px;left:18px;right:18px;display:flex;justify-content:space-between;gap:10px;font-size:.8rem;color:#e9e7ff}.glass{background:#101322aa;border:1px solid #ffffff24;padding:8px 11px;border-radius:10px;backdrop-filter:blur(8px)}
+    section{padding:28px 0 48px}.section-head{text-align:center;margin-bottom:25px}.section-head h2{font-size:clamp(1.7rem,4vw,2.4rem);margin:0 0 7px}.section-head p{color:var(--muted);margin:0}
+    .cards{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}.card{background:linear-gradient(180deg,#1d2239,#171a2b);border:1px solid var(--line);border-radius:18px;padding:22px}.ico{display:grid;place-items:center;width:47px;height:47px;border-radius:14px;background:#8b5cf626;font-size:1.4rem;margin-bottom:13px}.card h3{margin:0 0 6px}.card p{margin:0;color:var(--muted);font-size:.95rem}
+    .studio{max-width:760px;margin:auto;background:#171b2d;border:1px solid var(--line);border-radius:22px;padding:22px}.tabs{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:17px}.tab{background:#242941;border:1px solid transparent;color:var(--muted);padding:9px 13px;border-radius:10px;cursor:pointer}.tab.active{background:#8b5cf626;color:white;border-color:#a78bfa88}
+    label{display:block;font-weight:700;margin:14px 0 7px}textarea,input{width:100%;border:1px solid #39415f;background:#101322;color:white;border-radius:12px;padding:13px;font:inherit;outline:none}textarea{min-height:115px;resize:vertical}textarea:focus,input:focus{border-color:#a78bfa}
+    .row{display:grid;grid-template-columns:1fr 1fr;gap:13px}.hint{color:var(--muted);font-size:.82rem;margin:9px 0 16px}.full{width:100%}.notice{display:none;margin-top:13px;padding:12px;border-radius:10px;background:#0e74901c;border:1px solid #67e8f955;color:#cffafe;font-size:.9rem}
+    footer{border-top:1px solid #ffffff15;color:var(--muted);padding:24px 0;margin-top:15px;font-size:.9rem}.foot{display:flex;justify-content:space-between;gap:14px;flex-wrap:wrap}
+    @media(max-width:760px){nav{gap:12px;font-size:.82rem}.hero{grid-template-columns:1fr;padding:42px 0 35px;gap:25px}.art{min-height:260px}.cards{grid-template-columns:1fr}.row{grid-template-columns:1fr}.studio{padding:16px}header{gap:12px}}
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <header>
+      <a class="brand" href="#" aria-label="DM Sideffect home"><span class="logo">▶</span><span>DM Sideffect</span></a>
+      <nav aria-label="Main navigation"><a href="#features">Features</a><a href="#studio">AI Studio</a><a href="#about">About</a></nav>
+    </header>
+    <main>
+      <div class="hero">
+        <div>
+          <span class="pill">✦ AI VIDEO CREATOR</span>
+          <h1>Create videos<br>with <span class="gradient">your imagination.</span></h1>
+          <p class="lead">Turn your ideas into cinematic video concepts. Start with a prompt, explore creative styles, and bring your next story to life.</p>
+          <div class="actions"><a class="btn primary" href="#studio">Start Creating →</a><a class="btn secondary" href="#features">Explore Features</a></div>
+        </div>
+        <div class="art" role="img" aria-label="Abstract glowing purple AI orb">
+          <div class="orb"></div><div class="art-label"><span class="glass">✦ Creative mode</span><span class="glass">DM AI Studio</span></div>
+        </div>
+      </div>
+      <section id="features">
+        <div class="section-head"><h2>One idea. Many possibilities.</h2><p>Tools for your next creative project.</p></div>
+        <div class="cards">
+          <article class="card"><div class="ico">🎬</div><h3>Text to Video</h3><p>Describe a scene and plan a video concept from your words.</p></article>
+          <article class="card"><div class="ico">🖼️</div><h3>Image to Video</h3><p>Start with an image and imagine how the scene could move.</p></article>
+          <article class="card"><div class="ico">✨</div><h3>Creative Styles</h3><p>Explore cinematic, fantasy, travel, product and social-video ideas.</p></article>
+        </div>
+      </section>
+      <section id="studio">
+        <div class="section-head"><h2>Try the AI Studio</h2><p>Write a prompt and set up your video idea.</p></div>
+        <div class="studio">
+          <div class="tabs" role="tablist" aria-label="Creation mode">
+            <button class="tab active" type="button" data-mode="text" role="tab" aria-selected="true">Text to Video</button>
+            <button class="tab" type="button" data-mode="image" role="tab" aria-selected="false">Image to Video</button>
+          </div>
+          <label for="prompt">Your video prompt</label>
+          <textarea id="prompt" placeholder="Example: A cinematic sunrise over a mountain lake, mist drifting across the water, slow camera movement..."></textarea>
+          <div id="imageField" hidden><label for="imageUrl">Image URL (optional demo field)</label><input id="imageUrl" type="url" placeholder="https://example.com/your-image.jpg"></div>
+          <div class="row">
+            <div><label for="style">Visual style</label><select id="style"><option>Cinematic</option><option>Anime</option><option>Realistic</option><option>Fantasy</option><option>Travel vlog</option><option>3D animation</option></select></div>
+            <div><label for="duration">Video length</label><select id="duration"><option>5 seconds</option><option selected>8 seconds</option><option>10 seconds</option><option>15 seconds</option></select></div>
+          </div>
+          <p class="hint">This starter website is a front-end demo. Real video generation needs a connected AI video API and a secure backend.</p>
+          <button class="btn primary full" id="generate" type="button">Prepare Video Idea ✦</button>
+          <div class="notice" id="notice" role="status"></div>
+        </div>
+      </section>
+      <section id="about"><div class="section-head"><h2>Made for creators</h2><p>DM Sideffect is your starting point for AI-powered storytelling.</p></div></section>
+    </main>
+    <footer><div class="foot"><span>© <span id="year"></span> DM Sideffect</span><span>Built for creative ideas ✦</span></div></footer>
+  </div>
+  <script>
+    const tabs = document.querySelectorAll('.tab');
+    const imageField = document.getElementById('imageField');
+    const prompt = document.getElementById('prompt');
+    const notice = document.getElementById('notice');
+    let mode = 'text';
+    tabs.forEach(tab => tab.addEventListener('click', () => {
+      mode = tab.dataset.mode;
+      tabs.forEach(t => { const active = t === tab; t.classList.toggle('active', active); t.setAttribute('aria-selected', String(active)); });
+      imageField.hidden = mode !== 'image';
+      prompt.placeholder = mode === 'image' ? 'Describe the motion you want: gentle camera push-in, wind moving the trees...' : 'Describe your scene, camera movement, lighting and mood...';
+      notice.style.display = 'none';
+    }));
+    document.getElementById('generate').addEventListener('click', () => {
+      const value = prompt.value.trim();
+      if (!value) { notice.textContent = 'पहले अपना वीडियो prompt लिखें, फिर दोबारा क्लिक करें।'; }
+      else { notice.textContent = 'आपका वीडियो आइडिया तैयार है! यह अभी demo है — असली वीडियो बनाने के लिए AI video API और secure backend जोड़ना होगा। Prompt: ' + value; }
+      notice.style.display = 'block';
+    });
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
