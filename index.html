@@ -1,0 +1,58 @@
+
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>DM Sideffect | AI Video Creator</title>
+<style>
+*{box-sizing:border-box}
+body{margin:0;font-family:Arial,sans-serif;background:#101322;color:#fff}
+header{padding:22px;background:#191d31;border-bottom:1px solid #303650}
+h1{color:#b68cff}
+main{max-width:850px;margin:30px auto;padding:20px}
+.card{background:#191d31;padding:24px;border-radius:18px;border:1px solid #303650}
+p{color:#c5c8dc;line-height:1.6}
+label{display:block;margin:18px 0 8px}
+textarea,select{width:100%;padding:13px;border-radius:9px;background:#101322;color:white;border:1px solid #444b68}
+button{margin-top:18px;padding:14px;border:0;border-radius:9px;background:#9865ff;color:white;font-weight:bold;width:100%;font-size:16px}
+.note{font-size:13px;color:#b9bfd7}
+</style>
+</head>
+<body>
+<header><h2>✨ DM Sideffect</h2>AI Video Creator</header>
+<main>
+<div class="card">
+<h1>Create AI Videos</h1>
+<p>Turn your ideas into cinematic video concepts.</p>
+<label for="prompt">Describe your video idea</label>
+<textarea id="prompt" rows="4" placeholder="Example: A cinematic sunrise over a beautiful mountain lake"></textarea>
+<label for="style">Video style</label>
+<select id="style">
+<option>Cinematic</option>
+<option>Anime</option>
+<option>Realistic</option>
+<option>Fantasy</option>
+<option>Nature</option>
+</select>
+<label for="duration">Video duration</label>
+<select id="duration">
+<option>5 seconds</option>
+<option>8 seconds</option>
+</select>
+<button onclick="makeIdea()">Prepare Video Idea ✨</button>
+<p id="result"></p>
+<p class="note">This demo prepares a prompt. Actual AI video generation requires connecting a video generation service.</p>
+</div>
+</main>
+<script>
+function makeIdea(){
+const p=document.getElementById('prompt').value.trim();
+const s=document.getElementById('style').value;
+const d=document.getElementById('duration').value;
+document.getElementById('result').textContent=p ? "Your video prompt: "+p+" | Style: "+s+" | Duration: "+d : "Please enter your video idea first.";
+}
+</script>
+</body>
+</html>
+
